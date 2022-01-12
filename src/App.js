@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import {useEffect, useState} from "react";
+ import Rocket from "./components/Rocket";
+
+
+export default function App() {
+
+    let [rocketList, setRocketList] = useState([]);
+
+
+    useEffect(() => {
+        fetch('https://api.spacexdata.com/v3/launches/')
+            .then(response => response.json())
+            .then(rockets => {
+                setRocketList(rockets.filter(item => item.launch_year !== '2020'))
+            })
+
+    }, []);
+
+    return (
+        <div className={'wrap'}>
+            {rocketList.map(item => <Rocket
+                key = {item.flight_number}
+                name = {item.mission_name}
+                year = {item.launch_year}
+                photo = {item.links.mission_patch_small}/>)}
+        </div>
+    )
 }
 
-export default App;
+
