@@ -65,6 +65,7 @@ export default function App() {
             />)}
           </div>
         </div>
+
         <div className={'comments'}>
           {commentList.map(item => <Comment
               key = {item.id}
