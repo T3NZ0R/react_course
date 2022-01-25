@@ -1,19 +1,6 @@
 import {useEffect, useState} from "react";
 
-import './Post.css';
-
-function Post(props){
-
-    let{title, body}=props;
-
-
-    return(
-        <div className={'post'}>
-            <h4>{title}</h4>
-            <p>{body}</p>
-        </div>
-    )
-}
+import Post from "./Post";
 
 function Posts(){
     let [postList, setPostList] = useState([]);
@@ -31,10 +18,10 @@ function Posts(){
 
     return(
         postList.map(item => <Post
-                key = {item.id}
-                title = {item.title}
-                body = {item.body}
-            />)
+            key = {item.id}
+            title = {item.title}
+            body = {item.body}
+        />)
     )
 }
 

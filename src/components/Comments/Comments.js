@@ -1,19 +1,5 @@
 import {useEffect, useState} from "react";
-
-import './Comment.css';
-
-function Comment(props){
-
-    let{name,email, body}=props;
-
-    return(
-        <div className={'comment'}>
-            <h4>{name}</h4>
-            <h4>{email}</h4>
-            <p>{body}</p>
-        </div>
-    )
-}
+import Comment from "./Comment";
 
 function Comments(){
 
@@ -31,11 +17,11 @@ function Comments(){
 
     return(
         commentList.map(item => <Comment
-                key = {item.id}
-                name = {item.title}
-                email = {item.email}
-                body = {item.body}
-            />)
+            key = {item.id}
+            name = {item.title}
+            email = {item.email}
+            body = {item.body}
+        />)
     )
 }
 

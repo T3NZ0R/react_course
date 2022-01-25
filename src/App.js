@@ -1,7 +1,7 @@
 import './App.css';
-import Users from "./components/User";
-import Posts from "./components/Post";
-import Comments from "./components/Comment";
+import Users from "./components/Users/Users";
+import Posts from "./components/Posts/Posts";
+import Comments from "./components/Comments/Comments";
 
 export default function App() {
 
