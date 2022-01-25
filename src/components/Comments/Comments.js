@@ -18,9 +18,7 @@ function Comments(){
     return(
         commentList.map(item => <Comment
             key = {item.id}
-            name = {item.title}
-            email = {item.email}
-            body = {item.body}
+            comment={item}
         />)
     )
 }

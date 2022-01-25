@@ -1,7 +1,6 @@
 import './User.css';
 
-function User (props){
-    let { id, name, username, email} = props;
+function User ({user:{ id, name, username, email}}){
     return(
         <div className={'user'}>
             <h3>{id}</h3>

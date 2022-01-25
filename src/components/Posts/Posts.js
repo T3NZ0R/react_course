@@ -19,8 +19,7 @@ function Posts(){
     return(
         postList.map(item => <Post
             key = {item.id}
-            title = {item.title}
-            body = {item.body}
+            post = {item}
         />)
     )
 }

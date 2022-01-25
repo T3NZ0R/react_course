@@ -1,9 +1,7 @@
 
 import './Comment.css';
 
-function Comment(props){
-
-    let{name,email, body}=props;
+function Comment({comment:{name,email, body}}){
 
     return(
         <div className={'comment'}>

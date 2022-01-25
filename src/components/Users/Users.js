@@ -19,10 +19,7 @@ function Users (){
     return(
         userList.map(item => <User
             key = {item.id}
-            id = {item.id}
-            name = {item.name}
-            username = {item.username}
-            email = {item.email} />)
+            user = {item} />)
     );
 
 }

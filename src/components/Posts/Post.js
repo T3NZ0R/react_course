@@ -1,10 +1,7 @@
 
 import './Post.css';
 
-function Post(props){
-
-    let{title, body}=props;
-
+function Post({post:{title, body}}){
 
     return(
         <div className={'post'}>
